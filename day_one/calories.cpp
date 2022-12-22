@@ -14,7 +14,7 @@ int main() {
 
     if (file.is_open()) {
         while(getline(file, line)) {
-            if (line == "\n") {
+            if (line.empty()) {
                 counts.push_back(running_count);
                 running_count = 0;
             }
@@ -25,5 +25,5 @@ int main() {
     }
 
     sort(counts.begin(), counts.end(), greater<int>());
-    cout << counts[0] + counts[1] + counts[2];
+    cout << counts[0] + counts[1] + counts[2] << "\n";
 }
