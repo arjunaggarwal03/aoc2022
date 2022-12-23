@@ -25,6 +25,9 @@ int main() {
         }
     }
 
+    cout << int('a') << "\n";
+    cout << int('A') << "\n";
+
     int total_priority = 0;
     for (char item : repeats) {
         if (isupper(item)) {
