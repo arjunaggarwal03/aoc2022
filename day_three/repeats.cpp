@@ -25,16 +25,15 @@ int main() {
         }
     }
 
-    cout << int('a') - 96 << "\n";
-    cout << int('A') - 39 << "\n";
-
     int total_priority = 0;
     for (char item : repeats) {
         if (isupper(item)) {
-            total_priority += int(item) - 39;
+            total_priority += int(item) - 38;
         }
         else {
             total_priority += int(item) - 96;
         }
     }
+
+    cout << total_priority << "\n";
 }
