@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <cstring>
+#include <cctype>
 #include <set>
 #include <map>
 
@@ -24,7 +25,13 @@ int main() {
         }
     }
 
+    int total_priority = 0;
     for (char item : repeats) {
-        cout << item << "\n";
+        if (isupper(item)) {
+            total_priority += int(item) - 43;
+        }
+        else {
+            total_priority += int(item) - 46;
+        }
     }
 }
