@@ -40,11 +40,11 @@ int main() {
                 points += values[losses[their_move]];
             }
             else if (outcome == 'Y') {
-                points += 1;
+                points += 3;
                 points += values[draws[their_move]];
             }
             else {
-                points += 3;
+                points += 6;
                 points += values[wins[their_move]];
             }
         }
