@@ -1,22 +1,26 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
-#include <bits/stdc++.h>
+#include <map>
 
 using namespace std;
 
 int main() {
     ifstream file ("rps.txt");
     string line;
-    vector<int> counts;
-    int points = 0;
-
+    int points;
     map<char, char> wins;
-    wins.insert({'A', 'Y'}); // paper beats their rock
-    wins.insert({'B', 'Z'}); // scissors beats their paper
-    wins.insert({'C', 'X'}); // rock beats their scissors
+    map<char, char> draws;
 
+    wins['A'] = 'Y'; // paper beats their rock
+    wins['B'] = 'Z'; // scissors beats their paper
+    wins['C'] = 'X'; // rock beats their scissors
+
+    draws['A'] = 'X'; // rock draws with rock
+    draws['B'] = 'Y'; // paper draws with paper
+    draws['C'] = 'Z'; // scissors draws with scissors
+
+    points = 0;
     if (file.is_open()) {
         while(getline(file, line)) {
             char their_move = line[0];
@@ -35,7 +39,7 @@ int main() {
             if (wins[their_move] == your_move) {
                 points += 6;
             }
-            else if (their_move == your_move) {
+            else if (draws[their_move] == your_move) {
                 points += 3;
             }
         }
