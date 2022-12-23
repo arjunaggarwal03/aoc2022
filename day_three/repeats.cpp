@@ -13,13 +13,15 @@ int main() {
 
     if (file.is_open()) {
         while(getline(file, line)) {
-            for (int i = 0; i < strlen(line.c_str()) / 2; i++) {
-                if (line[i] == line[strlen(line.c_str()) + i - 1]) {
+            cout << line << "\n";
+            for (int i = 0; i < line.size() / 2; i++) {
+                if (line[i] == line[line.size() / 2 + i]) {
+                    cout << line[i] << line[line.size() / 2 + i] << "\n";
                     repeats.push_back(line[i]);
                 }
             }
         }
     }
 
-    cout << repeats[0] << "\n";
+    cout << repeats[0] << repeats[1] << repeats[2] << "\n";
 }
