@@ -23,5 +23,5 @@ int main() {
         }
     }
 
-    cout << repeats[0] << repeats[1] << repeats[2] << "\n";
+    cout << repeats[0] << repeats[1] << repeats[2];
 }
