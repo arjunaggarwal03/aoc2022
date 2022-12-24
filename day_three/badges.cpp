@@ -16,7 +16,10 @@ int main() {
 
     if (file.is_open()) {
         while(getline(file, line)) {
-            
+            string line_b, line_c;
+            getline(file, line_b);
+            getline(file, line_c);
+            cout << line << line_b << line_c << "\n";
         }
     }
 
