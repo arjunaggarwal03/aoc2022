@@ -5,6 +5,7 @@
 #include <cctype>
 #include <vector>
 #include <map>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -15,19 +16,22 @@ int main() {
 
     if (file.is_open()) {
         while(getline(file, line)) {
-            bool found = false;
-            int i = 0;
-            while (!found && i < line.size() / 2) {
-                for (int j = line.size() / 2; j < line.size(); j++) {
-                    if (line[i] == line[j]) {
-                        repeats.push_back(line[i]);
-                        found = true;
-                        break;
-                    }
-                }
-                i++;
+            vector<char> compartment_a, compartment_b;
+
+            for (int i = 0; i < line.size() / 2; i++) {
+                compartment_a.push_back(line[i]);
             }
-            found = false;
+
+            for (int j = line.size() / 2; j < line.size(); j++) {
+                compartment_b.push_back(line[j]);
+            }
+
+            for (char item : compartment_a) {
+                if (find(compartment_b.begin(), compartment_b.end(), item) != compartment_b.end()) {
+                    repeats.push_back(item);
+                    break;
+                }
+            }
         }
     }
 
