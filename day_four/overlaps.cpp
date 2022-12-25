@@ -17,7 +17,11 @@ int main() {
         while(getline(file, line)) {
             string assignment_a = line.substr(0, line.find(","));
             string assignment_b = line.substr(line.find(",") + 1, line.size() - line.find(","));
-            cout << assignment_a << assignment_b << "\n";
+            int start_a = stoi(assignment_a.substr(0, assignment_a.find("-")));
+            int end_a = stoi(assignment_a.substr(assignment_a.find("-") + 1, assignment_a.size() - assignment_a.find("-")));
+            int start_b = stoi(assignment_b.substr(0, assignment_b.find("-")));
+            int end_b = stoi(assignment_b.substr(assignment_b.find("-") + 1, assignment_b.size() - assignment_b.find("-")));
+            cout << start_a << end_a << start_b << end_b << "\n";
         }
     }
 }
