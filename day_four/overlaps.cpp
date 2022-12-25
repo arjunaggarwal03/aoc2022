@@ -12,6 +12,7 @@ using namespace std;
 int main() {
     ifstream file ("assignments.txt");
     string line;
+    int overlaps = 0;
 
     if (file.is_open()) {
         while(getline(file, line)) {
@@ -21,7 +22,19 @@ int main() {
             int end_a = stoi(assignment_a.substr(assignment_a.find("-") + 1, assignment_a.size() - assignment_a.find("-")));
             int start_b = stoi(assignment_b.substr(0, assignment_b.find("-")));
             int end_b = stoi(assignment_b.substr(assignment_b.find("-") + 1, assignment_b.size() - assignment_b.find("-")));
-            cout << start_a << end_a << start_b << end_b << "\n";
+            
+            if (start_a < start_b) {
+                if (end_a >= end_b) {
+                    overlaps++;
+                }
+            }
+            else {
+                if (end_b >= end_a) {
+                    overlaps++;
+                }
+            }
         }
     }
+
+    cout << overlaps << "\n";
 }
