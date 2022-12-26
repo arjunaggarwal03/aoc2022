@@ -23,10 +23,16 @@ int main() {
             int start_b = stoi(assignment_b.substr(0, assignment_b.find("-")));
             int end_b = stoi(assignment_b.substr(assignment_b.find("-") + 1, assignment_b.size() - assignment_b.find("-")));
             
-            if (start_a <= start_b && end_a >= end_b) {
+            if (start_a >= start_b && start_a <= end_b) {
                 overlaps++;
             }
-            else if (start_b <= start_a && end_b >= end_a) {
+            else if (end_a >= start_b && end_a <= end_b) {
+                overlaps++;
+            }
+            else if (start_b >= start_a && start_b <= end_a) {
+                overlaps++;
+            }
+            else if (end_b >= start_a && end_b <= end_a) {
                 overlaps++;
             }
         }
