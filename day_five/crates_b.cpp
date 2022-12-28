@@ -32,9 +32,15 @@ int main() {
                 int source = stoi(line.substr(line.find("from") + 5, line.find("to") - line.find("from") - 6));
                 int target = stoi(line.substr(line.find("to") + 3, line.size() - line.find("to") - 3));
 
+                // put items in list to insert in reverse order
+                vector<char> items;
                 for (int i = 0; i < num_items; i++) {
-                    crates[target - 1].push(crates[source - 1].top());
+                    items.push_back(crates[source - 1].top());
                     crates[source - 1].pop();
+                }
+
+                for (int j = items.size(); j > 0; j--) {
+                    crates[target - 1].push(items[j - 1]);
                 }
             }
         }
