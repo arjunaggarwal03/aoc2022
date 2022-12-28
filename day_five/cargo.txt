@@ -1,12 +1,12 @@
-[N]             [R]             [C]
-[T] [J]         [S] [J]         [N]
-[B] [Z]     [H] [M] [Z]         [D]
-[S] [P]     [G] [L] [H] [Z]     [T]
-[Q] [D]     [F] [D] [V] [L] [S] [M]
-[H] [F] [V] [J] [C] [W] [P] [W] [L]
-[G] [S] [H] [Z] [Z] [T] [F] [V] [H]
-[R] [H] [Z] [M] [T] [M] [T] [Q] [W]
- 1   2   3   4   5   6   7   8   9 
+R G H Q S B T N
+H S F D P Z J
+Z H V
+M Z J F G H
+T Z C D L M S R
+M T W V H Z J
+T F P L Z
+Q V W S
+W H L M T D N C
 
 move 3 from 9 to 7
 move 4 from 4 to 5
