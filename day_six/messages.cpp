@@ -17,16 +17,15 @@ int main() {
         string stream;
 
         getline(file, stream);
-        for (int i = 0; i < stream.size() - 4; i++) {
+        for (int i = 0; i < stream.size() - 14; i++) {
             set<char> seq;
 
-            seq.insert(stream[i]);
-            seq.insert(stream[i + 1]);
-            seq.insert(stream[i + 2]);
-            seq.insert(stream[i + 3]);
+            for (int j = 0; j < 14; j++) {
+                seq.insert(stream[i + j]);
+            }
 
-            if (seq.size() == 4) {
-                cout << i + 4 << "\n";
+            if (seq.size() == 14) {
+                cout << i + 14 << "\n";
                 return 0;
             }
         }
