@@ -3,7 +3,8 @@
         "*.tcc": "cpp",
         "list": "cpp",
         "fstream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "source_location": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
