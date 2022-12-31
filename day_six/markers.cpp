@@ -25,9 +25,10 @@ int main() {
             seq.insert(stream[i + 2]);
             seq.insert(stream[i + 3]);
 
-            
+            if (seq.size() == 4) {
+                cout << i + 3 << "\n";
+                return 0;
+            }
         }
     }
-
-    cout << overlaps << "\n";
 }
