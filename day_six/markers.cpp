@@ -26,7 +26,7 @@ int main() {
             seq.insert(stream[i + 3]);
 
             if (seq.size() == 4) {
-                cout << i + 3 << "\n";
+                cout << i + 4 << "\n";
                 return 0;
             }
         }
