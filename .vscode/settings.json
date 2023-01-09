@@ -4,7 +4,8 @@
         "list": "cpp",
         "fstream": "cpp",
         "iostream": "cpp",
-        "source_location": "cpp"
+        "source_location": "cpp",
+        "chrono": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
