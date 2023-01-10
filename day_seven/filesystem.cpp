@@ -31,7 +31,23 @@ int main() {
                 }
                 else {
                     prev_dir = curr_dir;
-                    
+                    curr_dir = line.substr(5, line.size());
+                    if (children.find(curr_dir) == children.end()) {
+                        vector<string> temp;
+                        children[curr_dir] = temp;
+                    }
+                }
+            }
+            else if (line.substr(0, 4) == "$ ls") { // listing contents
+                getline(file, line);
+                while(line.substr(0, 1) != "$") {
+                    if (line.substr(0,3) == "dir") {
+                        children[curr_dir].push_back(line.substr(5, line.size()));
+                        parent[line.substr(5, line.size())] = curr_dir;
+                    }
+                    else {
+                        
+                    }
                 }
             }
         }
