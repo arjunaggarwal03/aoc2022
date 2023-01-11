@@ -46,8 +46,12 @@ int main() {
                         parent[line.substr(5, line.size())] = curr_dir;
                     }
                     else {
-                        
+                        if (size.find(curr_dir) == size.end()) {
+                            size[curr_dir] = 0;
+                        }
+                        size[curr_dir] += stoi(line.substr(0, line.find(" ")));
                     }
+                    getline(file, line);
                 }
             }
         }
