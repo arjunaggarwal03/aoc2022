@@ -55,6 +55,11 @@ int main() {
         }
     }
 
-    cout << children << "\n";
+    for (const auto &[key, value] : children) {
+        cout << "Parent: " << key << "\n";
+        for (string child : value) {
+            cout << "Child: " << child << "\n";
+        }
+    }
 
 }
